@@ -1,0 +1,63 @@
+/* --- 全体 --- */
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* --- タブメニュー --- */
+.tab-menu {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.tab-menu a {
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #555;
+}
+
+.tab-menu a.active {
+    color: red;
+    border-bottom: 2px solid red;
+}
+
+/* --- 商品一覧グリッド --- */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* 自動で列数調整 */
+    gap: 24px;
+    /* カード間の余白 */
+}
+
+/* --- 商品カード --- */
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+}
+
+/* --- 商品画像 --- */
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* --- 商品名 --- */
+.product-name {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+}
