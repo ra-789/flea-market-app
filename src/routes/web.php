@@ -19,10 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//商品一覧
 Route::get('/', [ItemController::class, 'index'])->name('products.index');
 Route::get('/mypage', fn() => 'マイページ')->name('mypage');
 Route::get('/sell', fn() => '出品ページ')->name('sell');
 
+//商品詳細
+Route::get('/item/{id}', function ($id) {
+    return "商品詳細ページ（ID: {$id}）";
+})->name('item.show');
+
+//認証系
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
 
@@ -32,10 +39,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/items', [ItemController::class, 'index'])->name('items.index');
 
-Route::get('/item/{id}', function ($id) {
-    return "商品詳細ページ（ID: {$id}）";
-})->name('item.show');
-
+//マイページ
 Route::middleware('auth')->group(function () {
     Route::get('/mypage', [MypageController::class, 'show'])->name('mypage.show');
     Route::get('/mypage/profile', [MypageController::class, 'edit'])->name('mypage.edit');
