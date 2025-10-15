@@ -24,9 +24,9 @@
                 <input type="text" name="q" placeholder="なにをお探しですか？" class="border rounded px-2 py-1">
             </form>
 
-            <a href="{{ route('login') }}" class="px-4 py-2 bg-gray-300 rounded inline-block">ログイン</a>
+            <a href="{{ route('logout') }}" class="px-4 py-2 bg-gray-300 rounded inline-block">ログアウト</a>
 
-            <a href="{{ route('mypage') }}" class="px-4 py-2 bg-gray-300 rounded inline-block">マイページ</a>
+            <a href="{{ route('mypage.show') }}" class="px-4 py-2 bg-gray-300 rounded inline-block">マイページ</a>
 
             <a href="{{ route('sell') }}" class="px-4 py-2 bg-gray-300 rounded inline-block">出品</a>
 

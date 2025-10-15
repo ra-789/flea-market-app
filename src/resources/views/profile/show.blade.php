@@ -5,14 +5,12 @@
 @section('content')
 <div class="container mx-auto px-6 py-8">
 
-    {{-- プロフィール基本情報 --}}
     <div class="flex items-center space-x-6 mb-8">
         <img src="{{ $user->profile_image ? asset('storage/' . $user->profile_image) : asset('images/default_profile.png') }}"
             alt="プロフィール画像" class="w-24 h-24 rounded-full object-cover">
         <h2 class="text-2xl font-bold">{{ $user->name }}</h2>
     </div>
 
-    {{-- 出品した商品 --}}
     <div class="mb-8">
         <h3 class="text-xl font-semibold mb-4">出品した商品</h3>
         @if($user->products->isEmpty())
@@ -30,7 +28,6 @@
         @endif
     </div>
 
-    {{-- 購入した商品 --}}
     <div>
         <h3 class="text-xl font-semibold mb-4">購入した商品</h3>
         @if($user->purchases->isEmpty())
